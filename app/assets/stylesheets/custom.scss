@@ -71,12 +71,16 @@ p {
   text-decoration: none;
 }
 .header-list {
-  color: #fff;
+  color: #fff !important;
   font-weight: bold;
 }
 .header-list:hover {
-  color: silver;
+  color: silver !important;
 }
+#dropdown-title {
+  background-color: teal;
+}
+
 /* デバッグウインドウ */
 
 .debug_dump {
