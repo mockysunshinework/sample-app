@@ -15,7 +15,7 @@
         </tr>
         <tr>
           <th class="col-md-2 active"><%= Task.human_attribute_name :description %></th>
-          <td class="col-md-10"><%= @task.description %></td>
+          <td class="col-md-10"><%== simple_format(text_url_to_link(@task.description), {}, sanitize: false) %></td>
         </tr>
         <tr>
           <th class="col-md-2 active"><%= Task.human_attribute_name :created_at %></th>
