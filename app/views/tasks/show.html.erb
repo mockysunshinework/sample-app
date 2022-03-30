@@ -6,24 +6,24 @@
     <table class="table table-bordered" id="table-task">
       <tbody>
         <tr>
-          <th class="col-md-2 active"><%= Task.human_attribute_name :id %></th>
+          <th class="active col-md-2"><%= Task.human_attribute_name :id %></th>
           <td class="col-md-10"><%= @task.id %></td>
         </tr>
         <tr>
-          <th class="col-md-2 active"><%= Task.human_attribute_name :name %></th>
-          <td class="col-md-10"><%= @task.name %></td>
+          <th class="active"><%= Task.human_attribute_name :name %></th>
+          <td><%= @task.name %></td>
         </tr>
         <tr>
-          <th class="col-md-2 active"><%= Task.human_attribute_name :description %></th>
-          <td class="col-md-10"><%== simple_format(text_url_to_link(@task.description), {}, sanitize: false) %></td>
+          <th class="active"><%= Task.human_attribute_name :description %></th>
+          <td><%== simple_format(text_url_to_link(@task.description), {}, sanitize: false) %></td>
         </tr>
         <tr>
-          <th class="col-md-2 active"><%= Task.human_attribute_name :created_at %></th>
-          <td class="col-md-10"><%= l(@task.created_at, format: :long) %></td>
+          <th class="active"><%= Task.human_attribute_name :created_at %></th>
+          <td><%= l(@task.created_at, format: :long) %></td>
         </tr>
         <tr>
-          <th class="col-md-2 active"><%= Task.human_attribute_name :updated_at %></th>
-          <td class="col-md-10"><%= l(@task.updated_at, format: :long) %></td>
+          <th class="active"><%= Task.human_attribute_name :updated_at %></th>
+          <td><%= l(@task.updated_at, format: :long) %></td>
         </tr>
       </tbody>
     </table>
