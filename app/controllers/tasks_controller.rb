@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   before_action :correct_user
   
   def index
-    @tasks = @user.tasks
+    @tasks = @user.tasks.order(created_at: :desc)
   end
   
   def new
@@ -19,6 +19,7 @@ class TasksController < ApplicationController
       
     else
       render :new
+    
     end
   end
   
@@ -31,6 +32,10 @@ class TasksController < ApplicationController
   end
   
   def update
+    unless current_user?
+      flash[:danger] = "編集権限がありません。"
+      redirect_to user_tasks_path(current_user)
+    end
     @task = Task.find(params[:id])
     if @task.update_attributes(task_params)
     # 更新に成功した場合の処理を記述する。
